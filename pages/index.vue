@@ -38,8 +38,11 @@ export default {
     posts() {
       return this.$store.state.posts.all;
     }
-  }
-};
+  },
+  created() {
+     this.$store.dispatch('posts/getPosts')
+  },
+}
 </script>
 
 <style scoped>
