@@ -39,8 +39,8 @@ export default {
       return this.$store.state.posts.all;
     }
   },
-  created() {
-     this.$store.dispatch('posts/getPosts')
+  async asyncData({ store }) {
+    await store.dispatch('posts/getPosts')
   },
 }
 </script>
